@@ -9,7 +9,6 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
 import {makeStyles} from "@material-ui/core";
-import Typography from '@mui/material/Typography';
 import SearchIcon from '@mui/icons-material/Search';
 import { Divider } from '@mui/material';
 
@@ -21,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
   text: {
     color: "#252733",
     fontSize: 14,
+  },
+  icon:{
+    color: "#C5C7CD",
   }
 }));  
 
@@ -35,7 +37,7 @@ const Header = (props) =>{
           <Grid container spacing={1} alignItems="center">
             <Grid sx={{ display: { sm: 'none', xs: 'block' } }} item>
               <IconButton
-                color="inherit"
+                className={classes.icon}
                 aria-label="open drawer"
                 onClick={onDrawerToggle}
                 edge="start"
@@ -45,11 +47,11 @@ const Header = (props) =>{
             </Grid>
             <Grid item xs />
             <Grid item>
-              <SearchIcon />
+              <SearchIcon className={classes.icon}/>
             </Grid>
             <Grid item>
               <Tooltip title="Alerts • No alerts">
-                <IconButton color="inherit">
+                <IconButton className={classes.icon}>
                   <NotificationsIcon />
                 </IconButton>
               </Tooltip>

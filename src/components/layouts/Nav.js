@@ -16,14 +16,13 @@ import { Link } from "react-router-dom";
 import ArticleIcon from '@mui/icons-material/Article';
 import {makeStyles} from "@material-ui/core";
 //import { Link } from '@mui/material';
-//import imgA from "../../assets/Vector.png";
-import imgA from "../../assets/Ellipse.svg";
-
+import imgA from "../../assets/Vector.png";
+//import imgA from "../../assets/Ellipse.svg";
 
 
 const menu = [
   
-    { id: 'Overview', icon:imgA, path:"/"  },
+    { id: 'Overview', icon: <ArticleIcon />, path:"/"  },
     { id: 'Tickets', icon: <PermMediaOutlinedIcon /> , path:"/" },
     { id: 'Ideas', icon: <PublicIcon /> },
     { id: 'Contacts', icon: <SettingsEthernetIcon /> },
@@ -45,20 +44,22 @@ const useStyles = makeStyles((theme) => ({
     display: "flex", 
     fontSize: 16,
     color: " #A4A6B3",
-           '&:hover': {
-            color: '#DDE2FF',
-            backgroundColor: "#9FA2B4" , 
-   },
+  //   '&:hover, &:focus': {
+  //     backgroundColor: "#9FA2B4" , 
+  //     opacity: 0.08,
+  //      color: " #A4A6B3",
+  //  },
      
     ml: 3,
   } ,
   toolbar: {
-    backgroundColor: "#D63031",
+    backgroundColor: "#363740",
     height: 60,
     [theme.breakpoints.up('sm')]: {
       height: 75,
     },
-  }
+  },
+  
 }));  
 
 
@@ -66,9 +67,11 @@ const useStyles = makeStyles((theme) => ({
 const item = {
   py: '2px',
   px: 3,
-  color: '#363740',
+  color: '#DDE2FF',
   '&:hover, &:focus': {
-    bgcolor: '#9FA2B4',
+    backgroundColor: "#9FA2B4" , 
+    opacity: 0.08,
+     color: " #A4A6B3",
   },
 };
 
@@ -91,18 +94,19 @@ return (
           <Box  >
            
             {menu.map(({ id, icon, active ,path}) => (
-              <ListItem disablePadding key={id}>
+              <ListItem disablePadding key={id} >
                 <ListItemButton selected={active} sx={item}>
                   <ListItemIcon>{icon}</ListItemIcon>
                   {/* <ListItemText>{childId}</ListItemText> */}
+                    <ListItemText   className={classes.link}>{id}</ListItemText>
                    
-                  <ListItemText sx={{ color: '#fff' }}>
+                  {/* <ListItemText >
 
                 <Link  to="/"  
-                className={classes.link}>
+                className={classes.link }>
                 {id}</Link>
          
-              </ListItemText>
+              </ListItemText> */}
                 </ListItemButton>
               </ListItem>
             ))}

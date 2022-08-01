@@ -5,7 +5,9 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Navigator from '../layouts/Nav';
 import Header from '../layouts/Header';
-
+import { Grid, Typography  } from '@mui/material';
+//import MainCard from '../cards/MainCard'
+import Overview from '../../pages/Overview';
 
 let theme = createTheme({
   palette: {
@@ -184,9 +186,14 @@ const Drawer = () => {
         </Box>
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
           <Header onDrawerToggle={handleDrawerToggle} />
-           
+         
+          <Box component="main" sx={{ flex: 1, py: 6, px: 4, bgcolor: '#F7F8FC' }}>
+            <Overview />
           </Box>
-     
+              
+             
+          </Box>
+      
        
       </Box>
     </ThemeProvider>

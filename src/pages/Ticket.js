@@ -5,7 +5,7 @@ const Ticket = () =>{
     return (
         <div >
          
-         hi
+      
         </div>
       );
 }
