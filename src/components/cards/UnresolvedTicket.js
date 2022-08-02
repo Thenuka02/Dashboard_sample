@@ -9,7 +9,7 @@ import CircleChecked from '@material-ui/icons/CheckCircleOutline';
 import MuiCheckbox from '@mui/material/Checkbox';
 import { Label } from '@material-ui/icons';
 
-export default function UnresolvedTicket({ title, subheader, list, ...other }) {
+export default function UnresolvedTicket({ title, subheader, list,listUnresolvedTicket, ...other }) {
   const { control } = useForm({
     defaultValues: {
       taskCompleted: ['2'],
@@ -41,7 +41,7 @@ export default function UnresolvedTicket({ title, subheader, list, ...other }) {
               View details
               </Typography>
             </Stack>
-              {list.map((task) => (
+              {listUnresolvedTicket.map((task) => (
                 <TaskItem
                   key={task.id}
                   task={task}
@@ -64,16 +64,14 @@ function TaskItem({ task, checked,label, icon, checkedIcon , num   }) {
   const [open, setOpen] = useState(null);
  
 
-function TextLable({   }) {
-    return (
-      <Box
-      sx={{ flexGrow: 1, m: 0 }}
-        label={label}
-        num={num}
+// function TextLable({   }) {
+//     return (
+//       <Box
+     
        
-      />
-    );
-  }
+//       />
+//     );
+//   }
   
   return (
     <Stack

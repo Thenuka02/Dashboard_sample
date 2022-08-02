@@ -69,9 +69,9 @@ const item = {
   px: 3,
   color: '#DDE2FF',
   '&:hover, &:focus': {
-    backgroundColor: "#9FA2B4" , 
+    //backgroundColor: "#9FA2B4" , 
     opacity: 0.08,
-     color: " #A4A6B3",
+    //  color: " #A4A6B3",
   },
 };
 
@@ -98,7 +98,11 @@ return (
                 <ListItemButton selected={active} sx={item}>
                   <ListItemIcon>{icon}</ListItemIcon>
                   {/* <ListItemText>{childId}</ListItemText> */}
-                    <ListItemText   className={classes.link}>{id}</ListItemText>
+                    <ListItemText   className={classes.link}>
+                    <Link  to="/"  
+                className={classes.link }>
+                {id}</Link>
+                    </ListItemText>
                    
                   {/* <ListItemText >
 

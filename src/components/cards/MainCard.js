@@ -21,11 +21,11 @@ export default function MainCard({ title, total, icon, color = 'primary', sx, ..
     >
       
 
-      <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
+      <Typography variant="subtitle2" sx={{ color: "#9FA2B4" }}>
         {title}
       </Typography>
 
-      <Typography >{total}</Typography> 
+      <Typography sx={{ color: "#252733", fontSize:30 }}>{total}</Typography> 
     </Card>
   );
 }

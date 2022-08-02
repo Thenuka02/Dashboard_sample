@@ -10,7 +10,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
 import {makeStyles} from "@material-ui/core";
 import SearchIcon from '@mui/icons-material/Search';
-import { Divider } from '@mui/material';
+import { Divider, Typography } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -34,7 +34,11 @@ const Header = (props) =>{
     <>
       <AppBar position="sticky" elevation={0}>
         <Toolbar className={classes.toolbar}>
+        <Typography variant="h4" sx={{  color: "#252733",fontSize:24}}>
+         Overview
+        </Typography>
           <Grid container spacing={1} alignItems="center">
+            
             <Grid sx={{ display: { sm: 'none', xs: 'block' } }} item>
               <IconButton
                 className={classes.icon}

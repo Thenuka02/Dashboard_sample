@@ -10,9 +10,9 @@ const Overview = () =>{
     return (
         <div >
           
-          <Typography variant="h4" sx={{ mb: 5 }}>
+          {/* <Typography variant="h4" sx={{ mb: 5 }}>
          Overview
-        </Typography>
+        </Typography> */}
 
         <Grid container spacing={1} sx={{ mb: 5 }}>
           <Grid item xs={12} sm={6} md={3}>
@@ -47,11 +47,11 @@ const Overview = () =>{
            
              <UnresolvedTicket
               title=""
-              list={[
+              listUnresolvedTicket={[
                 { id: '1', label: 'Waiting on Feature Request' ,num:"4238" },
                 { id: '2', label: 'Awaiting Customer Response', num:"1005" },
                 { id: '3', label: 'Awaiting Developer Fix', num:"914" },
-                { id: '1', label: 'Pending' ,num:"281" },
+                { id: '4', label: 'Pending' ,num:"281" },
               ]}
             /> 
           </Grid>
