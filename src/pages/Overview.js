@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography, Divider ,Box } from '@mui/material';
+import { Grid, Typography, Divider ,Box , Button} from '@mui/material';
 import MainCard from '../components/cards/MainCard';
 import UnresolvedTicket from "../components/cards/UnresolvedTicket";
 import { faker } from '@faker-js/faker';
@@ -58,12 +58,23 @@ const Overview = () =>{
 
           <Grid item xs={12} md={6} lg={6} >
             <Task
-              title="Tasks"
+              title="Task"
+              subheader="Today"
+              // list={[
+              //   { id: '1', label: 'Finish ticket update' , button:"URGENT"  },
+              //   { id: '2', label: 'Create new ticket example', button:"NEW"   },
+              //   { id: '3', label: 'Update ticket report', button:"DEFAULT" },
+              // ]}   
               list={[
-                { id: '1', label: 'Finish ticket update' , button:"URGENT"  },
-                { id: '2', label: 'Create new ticket example', button:"NEW"   },
-                { id: '3', label: 'Update ticket report', button:"DEFAULT" },
-              ]}   
+                { id: '1', label: 'Finish ticket update' , 
+                button:  <Button  sx={{ color: '#FFFFFF', backgroundColor: '#FEC400', borderRadius: "8px" }}>URGENT </Button>  },
+                { id: '2', label: 'Create new ticket example', 
+                button:  <Button  sx={{ color: '#FFFFFF', backgroundColor: '#29CC97', borderRadius: "8px" }}>NEW </Button>  },
+                  
+                { id: '3', label: 'Update ticket report', 
+                button:  <Button  sx={{ color: '#FFFFFF', backgroundColor: '#F0F1F7', borderRadius: "8px" }}>DEFAULT </Button>  },
+             
+              ]}  
             />
            
           </Grid>

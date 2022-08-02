@@ -8,6 +8,14 @@ import CircleUnchecked from '@material-ui/icons/RadioButtonUnchecked';
 import CircleChecked from '@material-ui/icons/CheckCircleOutline';
 import MuiCheckbox from '@mui/material/Checkbox';
 import { Label } from '@material-ui/icons';
+import {makeStyles} from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  header: {
+    color: "#252733",
+  },
+  
+}));  
 
 export default function UnresolvedTicket({ title, subheader, list,listUnresolvedTicket, ...other }) {
   const { control } = useForm({
@@ -15,10 +23,11 @@ export default function UnresolvedTicket({ title, subheader, list,listUnresolved
       taskCompleted: ['2'],
     },
   });
+  const classes = useStyles();
 
   return (
     <Card {...other}>
-      <CardHeader subheader={subheader} />
+      {/* <CardHeader subheader={subheader} /> */}
       <Controller
         name="taskCompleted"
         control={control}
@@ -30,17 +39,25 @@ export default function UnresolvedTicket({ title, subheader, list,listUnresolved
             <>
             <Stack direction="row" alignItems="center" spacing={2}>
     
-              <Box sx={{ minWidth: 240, flexGrow: 1 }}>
+              <Box sx={{  flexGrow: 1 ,mt:1 }}>
 
-              <Typography variant="body2" noWrap>
+              <Typography variant="body2" noWrap  
+              sx={{ flexGrow: 1 , px: 2,
+                  py: 0.75 ,color: "#252733", fontSize:19}}>
               Unresolved tickets
               </Typography>
               </Box>
 
-              <Typography variant="caption" sx={{ pr: 3, flexShrink: 0 }}>
+              <Button  sx={{ pr: 3, flexShrink: 0 ,mt: 2 }}>
               View details
-              </Typography>
+              </Button>
             </Stack>
+            <Typography variant="body2" noWrap  
+              sx={{ flexGrow: 1, m: 0 , px: 2,
+                  py: 0.1,color: "#9FA2B4", fontSize:12}}>
+              Group: Support
+              </Typography>
+           
               {listUnresolvedTicket.map((task) => (
                 <TaskItem
                   key={task.id}
@@ -74,29 +91,47 @@ function TaskItem({ task, checked,label, icon, checkedIcon , num   }) {
 //   }
   
   return (
-    <Stack
-      direction="row"
-      sx={{
-        px: 2,
-        py: 0.75,
-        ...(checked && {
-          // color: 'text.disabled',
-          // textDecoration: 'line-through',
-        }),
-      }}
-    >
-    <Typography>
-    {task.label}
-    </Typography>
- 
-
-      <Button> {task.num}</Button>
-      
-      <Divider sx={{ mb: 1.5 }} />
     
-    </Stack>
+    // <Stack
+    //   direction="row"
+    //   sx={{
+    //     px: 2,
+    //     py: 1,
+    //     ...(checked && {
+    //       // color: 'text.disabled',
+    //       // textDecoration: 'line-through',
+    //     }),
+    //   }}
+    // >
+    // {/* <Typography>
+    // {task.label}
+    // </Typography>
+    //   <Button > {task.num}</Button> */}
+
+      <>
+      <Stack direction="row" alignItems="center" spacing={2}>
+    
+    <Box sx={{  flexGrow: 1 }}>
+
+    <Typography variant="body2" noWrap  
+     sx={{ flexGrow: 1, m: 0 , px: 2,
+      py: 1.2 ,color: "#252733", fontSize:14}}>
+    
+   {task.label}
+    </Typography>
+    </Box>
+
+    <Typography  sx={{ pr: 3, flexShrink: 0 , color: "#9FA2B4" }}>
+    {task.num}
+    </Typography>
+  </Stack>
+    </>  
+     
+  
   );
-}
+ 
+    
+    }
 
 
 

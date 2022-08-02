@@ -6,6 +6,16 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CircleUnchecked from '@material-ui/icons/RadioButtonUnchecked';
 import CircleChecked from '@material-ui/icons/CheckCircleOutline';
 import MuiCheckbox from '@mui/material/Checkbox';
+import {makeStyles} from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  subheader: {
+    color: "#9FA2B4",
+   
+  },
+  
+}));  
+
 
 export default function Task({ title, subheader, list, ...other }) {
   const { control } = useForm({
@@ -13,10 +23,24 @@ export default function Task({ title, subheader, list, ...other }) {
       taskCompleted: ['2'],
     },
   });
+  const classes = useStyles();
+
 
   return (
+    
     <Card {...other}>
-      <CardHeader title={title} subheader={subheader} />
+      <CardHeader  
+      title={title}  
+      subheader={<Typography className={classes.subheader}>{subheader} </Typography>} 
+      
+       
+      /> 
+      {/* <Box sx={{ p: 0, textAlign: 'right' }}>
+        <Button >
+          View all
+        </Button>
+      </Box> */}
+      
       <Controller
         name="taskCompleted"
         control={control}
@@ -28,15 +52,14 @@ export default function Task({ title, subheader, list, ...other }) {
             <>
             <Stack direction="row" alignItems="center" spacing={2}>
     
-            <Box sx={{ minWidth: 240, flexGrow: 1 }}>
-        
-            <Typography variant="body2" noWrap>
-             Create new
+            <Box>
+            <Typography variant="body2" sx={{ flexGrow: 1, m: 1 , color: "#C5C7CD"}}>
+             Create new task
             </Typography>
             </Box>
 
-            <Typography variant="caption" sx={{ pr: 3, flexShrink: 0 }}>
-            add
+            <Typography variant="caption" >
+           
             </Typography>
             </Stack>
             <Divider />
@@ -81,7 +104,7 @@ function Checkbox({ label, icon, checkedIcon , button  }) {
       direction="row"
       sx={{
         px: 2,
-        py: 0.75,
+        py: 0.2,
         ...(checked && {
           // color: 'text.disabled',
           // textDecoration: 'line-through',
@@ -95,9 +118,9 @@ function Checkbox({ label, icon, checkedIcon , button  }) {
         checkedIcon={<CheckCircleIcon />}
       />
 
-      <Button variant="contained"> {task.button}</Button>
+      <Button > {task.button}</Button>
       
-      <Divider sx={{ mb: 1.5 }} />
+     
     
     </Stack>
   );
