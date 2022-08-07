@@ -48,18 +48,19 @@ const Overview = () =>{
              <UnresolvedTicket
               title=""
               listUnresolvedTicket={[
-                { id: '1', label: 'Waiting on Feature Request' ,num:"4238" },
-                { id: '2', label: 'Awaiting Customer Response', num:"1005" },
-                { id: '3', label: 'Awaiting Developer Fix', num:"914" },
-                { id: '4', label: 'Pending' ,num:"281" },
+                { id: '1', label: 'Waiting on Feature Request' ,num:"4238", divide:<Divider />},
+                
+                { id: '2', label: 'Awaiting Customer Response', num:"1005", divide:<Divider /> },
+                { id: '3', label: 'Awaiting Developer Fix', num:"914", divide:<Divider /> },
+                { id: '4', label: 'Pending' ,num:"281", divide:<Divider /> },
               ]}
             /> 
           </Grid>
 
           <Grid item xs={12} md={6} lg={6} >
             <Task
-              title="Task"
-              subheader="Today"
+              // title="Task"
+              // subheader="Today"
               // list={[
               //   { id: '1', label: 'Finish ticket update' , button:"URGENT"  },
               //   { id: '2', label: 'Create new ticket example', button:"NEW"   },

@@ -29,12 +29,12 @@ export default function Task({ title, subheader, list, ...other }) {
   return (
     
     <Card {...other}>
-      <CardHeader  
+      {/* <CardHeader  
       title={title}  
       subheader={<Typography className={classes.subheader}>{subheader} </Typography>} 
       
        
-      /> 
+      />  */}
       {/* <Box sx={{ p: 0, textAlign: 'right' }}>
         <Button >
           View all
@@ -50,6 +50,21 @@ export default function Task({ title, subheader, list, ...other }) {
 
           return (
             <>
+             <Stack direction="row" alignItems="center" spacing={2}>
+    
+              <Box sx={{  flexGrow: 1 ,mt:1 }}>
+
+              <Typography variant="body2" noWrap  
+              sx={{ flexGrow: 1 , px: 2,
+                  py: 0.75 ,color: "#252733", fontSize:19}}>
+             Task
+              </Typography>
+              </Box>
+
+              <Button  sx={{ pr: 3, flexShrink: 0 ,mt: 2 }}>
+              View details
+              </Button>
+            </Stack>
             <Stack direction="row" alignItems="center" spacing={2}>
     
             <Box>

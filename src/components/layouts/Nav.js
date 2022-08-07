@@ -43,17 +43,19 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     display: "flex", 
     fontSize: 16,
-    color: " #A4A6B3",
-  //   '&:hover, &:focus': {
-  //     backgroundColor: "#9FA2B4" , 
-  //     opacity: 0.08,
-  //      color: " #A4A6B3",
-  //  },
+    color: "#DDE2FF",
+    // backgroundColor: "#363740" , 
+    '&:hover ': {
+    // backgroundColor: "#9FA2B4" , 
+    // opacity: 0.08,
+    // color: "#DDE2FF",
+    
+   },
      
     ml: 3,
   } ,
   toolbar: {
-    backgroundColor: "#363740",
+    //backgroundColor: "#363740",
     height: 60,
     [theme.breakpoints.up('sm')]: {
       height: 75,
@@ -68,10 +70,11 @@ const item = {
   py: '2px',
   px: 3,
   color: '#DDE2FF',
-  '&:hover, &:focus': {
+  //backgroundColor: "#363740" , 
+  '&:hover, &:active': {
     //backgroundColor: "#9FA2B4" , 
-    opacity: 0.08,
-    //  color: " #A4A6B3",
+    //opacity: 0.1,
+    //color: "#DDE2FF",
   },
 };
 
