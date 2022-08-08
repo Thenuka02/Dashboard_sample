@@ -12,13 +12,15 @@ import DnsRoundedIcon from '@mui/icons-material/DnsRounded';
 import PermMediaOutlinedIcon from '@mui/icons-material/PhotoSizeSelectActual';
 import PublicIcon from '@mui/icons-material/Public';
 import SettingsEthernetIcon from '@mui/icons-material/SettingsEthernet';
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import ArticleIcon from '@mui/icons-material/Article';
 import {makeStyles} from "@material-ui/core";
 //import { Link } from '@mui/material';
 import imgA from "../../assets/Vector.png";
 //import imgA from "../../assets/Ellipse.svg";
-
+import Link from '@mui/material/Link';
+import imgC from "../../assets/Circle.png"
+//const icon = require("../../assets/Circle.png");
 
 const menu = [
   
@@ -61,10 +63,24 @@ const useStyles = makeStyles((theme) => ({
       height: 75,
     },
   },
+  imgC:{
+    width: "1299",
+    backgroundSize: "cover",
+    height: "179px",
+}
+
   
 }));  
 
+const rightLink = {
+  // fontSize: 18,
+   color: "#FFFFFF",
+       '&:hover, &:active': {
+      //   backgroundColor: "#363740" ,
+      //  width: "300px"
+    },
 
+};
 
 const item = {
   py: '2px',
@@ -75,6 +91,8 @@ const item = {
     //backgroundColor: "#9FA2B4" , 
     //opacity: 0.1,
     //color: "#DDE2FF",
+    backgroundColor: "#363740" ,
+    //width: "300px"
   },
 };
 
@@ -82,7 +100,7 @@ const itemCategory = {
   py: 1.5,
   px: 3,
 };
-
+  
 const Nav = (props) =>{
   const { ...other } = props;
   const classes = useStyles();
@@ -90,22 +108,24 @@ const Nav = (props) =>{
 return (
   <Drawer variant="permanent" {...other}>
     <List disablePadding>
-      <ListItem sx={{ ...item, ...itemCategory, fontSize: 22, color: '#fff' }}>
-      Dashboard Kit
+      <ListItem image={imgC} sx={{ ...item, ...itemCategory, fontSize: 22, color: '#fff',  }}>
+       Dashboard Kit
       </ListItem>
      
           <Box  >
            
             {menu.map(({ id, icon, active ,path}) => (
-              <ListItem disablePadding key={id} >
+              <ListItem disablePadding key={id}  >
                 <ListItemButton selected={active} sx={item}>
                   <ListItemIcon>{icon}</ListItemIcon>
                   {/* <ListItemText>{childId}</ListItemText> */}
-                    <ListItemText   className={classes.link}>
-                    <Link  to="/"  
-                className={classes.link }>
-                {id}</Link>
-                    </ListItemText>
+                   
+                  <Link  to="/"   underline="none"  sx={rightLink} 
+                    className={classes.link}>
+                   <ListItemText    >{id}</ListItemText>
+                  </Link>
+               
+                    
                    
                   {/* <ListItemText >
 
@@ -123,18 +143,15 @@ return (
       <Box  >
            
             {menuList.map(({ id, icon, active ,path}) => (
-              <ListItem disablePadding key={id}>
+              <ListItem disablePadding key={id} >
                 <ListItemButton selected={active} sx={item}>
                   <ListItemIcon>{icon}</ListItemIcon>
                   {/* <ListItemText>{childId}</ListItemText> */}
                    
-                  <ListItemText sx={{ color: '#fff' }}>
-
-                  <Link  to="/setting"  
-                  className={classes.link}>
-                  {id}</Link>
-         
-            </ListItemText>
+                  <Link  to="/settings"   underline="none"  sx={rightLink} 
+                    className={classes.link}>
+                   <ListItemText    >{id}</ListItemText>
+                  </Link>
                 </ListItemButton>
               </ListItem>
             ))}
